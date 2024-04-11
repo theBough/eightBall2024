@@ -33,5 +33,8 @@ function askQuestion(){
 }//end Ask Question
 function makeRandomNumber(){
   rndNum = Math.random();
+  //The number 5 is the biggest number
+  rndNum  = rndNum * 5
+  rndNum = Math.ceil(rndNum)
   answer = rndNum
 }
