@@ -28,13 +28,21 @@ function draw() {
 }//end Draw
 
 function askQuestion(){
-  //answer = "That's a great question, let me ponder...."
   makeRandomNumber();
+  if(rndNum == 1){
+    answer = "That's a Hard No!!!"
+  }//end if
+  if(rndNum == 2){
+    answer = "Hmmmm Maybe"
+  }//end if
+  if(rndNum == 3){
+    answer = "Heck Ya"
+  }//end if
 }//end Ask Question
 function makeRandomNumber(){
   rndNum = Math.random();
-  //The number 5 is the biggest number
-  rndNum  = rndNum * 5
+  //The number 3 is the biggest number
+  rndNum  = rndNum * 3
   rndNum = Math.ceil(rndNum)
   answer = rndNum
 }
