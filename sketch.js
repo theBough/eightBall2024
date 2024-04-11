@@ -1,6 +1,7 @@
 let myFont;
 let myInput;
-let myButton
+let myButton;
+let answer;
 
 function setup() {
   createCanvas(400, 400);
@@ -10,6 +11,9 @@ function setup() {
   myButton = createButton("press me")
   myButton.position(110,100)
   myButton.style("cursor","pointer");
+  myButton.style("background-color","#003049")
+  myButton.mousePressed(askQuestion);
+  answer = "My Answer will Show here."
 }//end Setup
 function draw() {
   background("#C1121F");
@@ -19,4 +23,9 @@ function draw() {
   text("Eight Ball", 150, 20);
   textSize(15);
   text("Ask Me a Question", 137, 50);
+  text(answer, 110, 150)
 }//end Draw
+
+function askQuestion(){
+  answer = "That's a great question, let me ponder...."
+}//end Ask Question
