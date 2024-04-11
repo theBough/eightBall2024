@@ -2,6 +2,7 @@ let myFont;
 let myInput;
 let myButton;
 let answer;
+let rndNum
 
 function setup() {
   createCanvas(400, 400);
@@ -27,5 +28,10 @@ function draw() {
 }//end Draw
 
 function askQuestion(){
-  answer = "That's a great question, let me ponder...."
+  //answer = "That's a great question, let me ponder...."
+  makeRandomNumber();
 }//end Ask Question
+function makeRandomNumber(){
+  rndNum = Math.random();
+  answer = rndNum
+}
