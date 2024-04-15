@@ -4,12 +4,14 @@ let myButton;
 let answer;
 let rndNum;
 let theirQuestion
+let img;
 
 function setup() {
   //The setup is similar to:
   //"when Green Flag is clicked in Scratch"
   createCanvas(400, 400);
   myFont = loadFont("tilt.ttf");
+  img = loadImage("bus.jpg")
   myInput =createInput();
   myInput.position(110,75);
   myButton = createButton("press me")
@@ -32,6 +34,8 @@ function draw() {
   text("Ask Me a Question", 137, 50);
   text(answer, 110,180)
   text(theirQuestion, 110, 150)
+  image(img , 110 , 190)
+ 
 }//end Draw
 
 function askQuestion(){
@@ -39,6 +43,8 @@ function askQuestion(){
   makeRandomNumber();
   if(rndNum == 1){
     answer = "That's a Hard No!!!"
+    img = loadImage("hardNo.jpg")
+   
   }//end if
   if(rndNum == 2){
     answer = "Hmmmm Maybe"
@@ -50,7 +56,7 @@ function askQuestion(){
 function makeRandomNumber(){
   rndNum = Math.random();
   //The number 3 is the biggest number
-  rndNum  = rndNum * 3
+  rndNum  = rndNum * 1
   rndNum = Math.ceil(rndNum)
   answer = rndNum
 }
