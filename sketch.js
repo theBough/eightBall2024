@@ -2,9 +2,12 @@ let myFont;
 let myInput;
 let myButton;
 let answer;
-let rndNum
+let rndNum;
+let theirQuestion
 
 function setup() {
+  //The setup is similar to:
+  //"when Green Flag is clicked in Scratch"
   createCanvas(400, 400);
   myFont = loadFont("tilt.ttf");
   myInput =createInput();
@@ -15,8 +18,11 @@ function setup() {
   myButton.style("background-color","#003049")
   myButton.mousePressed(askQuestion);
   answer = "My Answer will Show here."
+  theirQuestion = ">> "
 }//end Setup
 function draw() {
+  //THis is similar to a Forever loop
+  //on the backdrop in scratch
   background("#C1121F");
   textFont(myFont);
   textSize(25);
@@ -24,10 +30,12 @@ function draw() {
   text("Eight Ball", 150, 20);
   textSize(15);
   text("Ask Me a Question", 137, 50);
-  text(answer, 110, 150)
+  text(answer, 110,180)
+  text(theirQuestion, 110, 150)
 }//end Draw
 
 function askQuestion(){
+  theirQuestion  = ">> " + myInput.value()
   makeRandomNumber();
   if(rndNum == 1){
     answer = "That's a Hard No!!!"
